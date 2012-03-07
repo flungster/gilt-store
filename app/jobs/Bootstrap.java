@@ -12,7 +12,8 @@ public class Bootstrap extends Job {
         System.out.println("loading sales");
         Gilt gilt = GiltFetcher.getInstance();
         gilt.setApiKey("5aa7344bd866dd8128b82bb868811442");
-        gilt.init();
+        gilt.start();
+
         System.out.println("Finished loading");
     }
     
