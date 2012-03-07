@@ -1,0 +1,10 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+<h2>Sale: ${sale.getName()}</h2>
+
+  <p><img src="${product.getImageUrls().get("420x560").iterator().next().getUrl()}">
+  <p>${product.getBrand()}</p>
+  <p>${product.getName()}</p>
+  <p>${product.getSkus().iterator().next().getSalePrice()}</p>
+  <p>${product.getSkus().iterator().next().getMsrpPrice()}</p>

@@ -1,0 +1,9 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+<h2>${store}</h2>
+
+#{list items:sales, as: 'sale'}
+  <p>#{a @SaleController.showSale(store, sale.getSaleKey())}<img src="${sale.getImageUrls().get("300x280").iterator().next().getUrl()}">#{/a}</p>
+  <p>${sale.getName()}</p>
+#{/list}

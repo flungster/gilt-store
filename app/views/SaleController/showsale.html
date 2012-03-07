@@ -1,0 +1,13 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+<h2>Sale: ${sale.getName()}</h2>
+
+<h3>Products:</h3>
+#{list items:products, as: 'product'}
+  <p>#{a @SaleController.showProductDetail(store, sale.getSaleKey(), product.getId())}<img src="${product.getImageUrls().get("300x400").iterator().next().getUrl()}">#{/a}
+  <p>${product.getBrand()}</p>
+  <p>${product.getName()}</p>
+  <p>${product.getSkus().iterator().next().getSalePrice()}</p>
+  <p>${product.getSkus().iterator().next().getMsrpPrice()}</p>
+#{/list}
