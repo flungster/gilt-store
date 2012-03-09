@@ -14,6 +14,12 @@ GET     /sale/{store}/{saleKey}/?               SaleController.showSale
 # Product Detail pages
 GET     /sale/{store}/{saleKey}/product/{productId}/?   SaleController.showProductDetail
 
+# Brand pages
+GET     /brand/{brand}/?                        BrandController.showProductsByBrand
+
+# Product Detail Page 2
+GET     /product/{productId}                    ProductController.show
+
 # Ignore favicon requests
 GET     /favicon.ico                            404
 
