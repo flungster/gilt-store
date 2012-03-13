@@ -7,6 +7,7 @@ import com.giltgroupe.model.sale.Sale;
 import com.giltgroupe.model.sale.Sales;
 import com.giltgroupe.net.GiltFetcher;
 
+import java.util.Collection;
 import java.util.List;
 
 import play.*;
@@ -18,8 +19,9 @@ public class BrandController extends Controller {
 
     public static void showProductsByBrand(String brand) {
         Gilt gilt = GiltFetcher.getInstance();
-        Products products = gilt.getProducts();
-        List<Product> foundProducts = products.findProductsByBrand(brand);
+        //Products products = gilt.getProducts();
+		Collection<Product> foundProducts = gilt.findProductsByBrand(brand);
+        //List<Product> foundProducts = products.findProductsByBrand(brand);
         render (brand, foundProducts);
     }
 }
